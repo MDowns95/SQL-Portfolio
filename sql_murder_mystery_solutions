@@ -24,3 +24,25 @@
 /* which returns crime_scene_report ( date integer, type text, description text, city text ) */
 
 /* From here you can go through the walkthrough or try it on your own */
+
+/* This querry brings up the crime scene report you need. */
+SELECT date, description
+  FROM crime_scene_report
+  WHERE city IS "SQL City" AND date IS "20180115";
+/* There are three results, but only one makes sense. The other two reports are a quote from the musical Hamilton and "Report Not Found"
+  Report reads: Security footage shows that there were 2 witnesses. 
+    The first witness lives at the last house on "Northwestern Dr". 
+    The second witness, named Annabel, lives somewhere on "Franklin Ave". */
+    
+/* This querry will give the name of the first witness who lives at the last house on "Northwestern Dr". */
+  SELECT name 
+    FROM person
+    WHERE address_street_name IS "Northwestern Dr"
+    ORDER BY address_number DESC LIMIT 1;
+/* Querry returns "Morty Schapiro"
+  
+/* This querry will give you the full name of the second witness "Annabel" who lives somewhere on "Franklin Ave". */
+  SELECT name 
+    FROM person
+    WHERE name LIKE "Annabel%" AND address_street_name IS "Franklin Ave";
+/* Querry returns "Annabel Miller" */
