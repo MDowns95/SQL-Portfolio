@@ -1,5 +1,7 @@
+/* In Progress */
+
 /* These are my solutions to the gauntlet of practice problems at https://www.sql-practice.com/
-  the practice database is a medical relational database
+  the practice database is a medical relational database built using SQLite
   the questions range through 17 easy, 23 medium, and 10 hard */
 
 /* Commands covered include: */
