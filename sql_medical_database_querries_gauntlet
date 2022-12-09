@@ -1,0 +1,17 @@
+/* These are my solutions to the gauntlet of practice problems at https://www.sql-practice.com/
+  the practice database is a medical relational database
+  the questions range through 17 easy, 23 medium, and 10 hard */
+
+/* Commands covered include: */
+
+/* Easy Questions */
+
+/* Question 1: Show first name, last name, and gender of patients who's gender is 'M' */
+SELECT first_name, last_name, gender 
+	FROM patients
+  WHERE gender IS 'M';
+  
+/* Question 2: Show first name and last name of patients who does not have allergies. (null) */
+SELECT first_name, last_name
+	FROM patients
+  WHERE allergies is NULL;
