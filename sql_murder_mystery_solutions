@@ -51,3 +51,17 @@ SELECT date, description
     It's not as neat doing them separately however. */
 
 /* Next step is finding witness testimonies. */
+  SELECT name, transcript
+	  FROM person p
+	  JOIN interview i
+	  ON p.id = i.person_id
+	  WHERE name IS 'Annabel Miller' OR name IS 'Morty Schapiro';
+/* Querry returns:
+  Morty Schapiro: I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag. 
+                  The membership number on the bag started with "48Z". 
+                  Only gold members have those bags. 
+                  The man got into a car with a plate that included "H42W".
+  Annabel Miller: I saw the murder happen, and I recognized the killer from my gym 
+                  when I was working out last week on January the 9th. */
+
+/* Next Step is to identify 
