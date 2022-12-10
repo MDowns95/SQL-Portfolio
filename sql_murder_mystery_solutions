@@ -46,3 +46,4 @@ SELECT date, description
     FROM person
     WHERE name LIKE "Annabel%" AND address_street_name IS "Franklin Ave";
 /* Querry returns "Annabel Miller" */
+
