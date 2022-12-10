@@ -1,5 +1,3 @@
-/* In Progress */
-
 /* Here There Be Spoilers! 
   These are my solutions for the SQL Murder Mystery found at https://mystery.knightlab.com/
   The SQL Murder Mystery is built using SQLite. Using SQL commands to navigate a relational database, you can solve a murder. */
@@ -76,4 +74,39 @@ SELECT date, description
 	WHERE check_in_date IS '20180109'
 	AND membership_id LIKE '48Z%';
 /* Querry returns: Joe Germuska and Jeremy Bowers */
+
+/* Next step is to match the name and the partial plate. */
+   SELECT name, plate_number
+   	FROM person p
+   	JOIN drivers_license dl
+   	ON p.license_id = dl.id
+   	WHERE name IS 'Joe Germuska' OR name IS 'Jeremy Bowers';
+/* Querry returns: Jeremy Bowers, plate number 0H42W2.
+   Confirm with the answer checker that yes, Jeremy Bowers was the shooter.
+   However, there is a part 2 to uncover who hired him, possible in two querries. */
    
+/* Part 2: begin by looking up the interview transcript of the murderer. */
+   SELECT transcript
+	FROM interview i
+	JOIN person p
+	ON i.person_id = p.id
+	WHERE name IS 'Jeremy Bowers';
+/* Querry returns: I was hired by a woman with a lot of money. 
+   I don't know her name but I know she's around 5'5" (65") or 5'7" (67"). 
+   She has red hair and she drives a Tesla Model S. 
+   I know that she attended the SQL Symphony Concert 3 times in December 2017. */
+   SELECT name, car_make, car_model, height, hair_color
+	FROM person p
+	JOIN facebook_event_checkin fec
+	ON p.id = fec.person_id
+	JOIN drivers_license dl
+	ON p.license_id = dl.id
+	WHERE event_name IS 'SQL Symphony Concert'
+	AND fec.date LIKE '2017__12'
+	AND car_model IS 'Model S';
+/* Querry returns: Miranda Priestly, Tesla Model S, height 66", red hair
+   Confirm in solution checker that yes, Miranda Priestly hired the shooter. */
+   
+/* Mystery Solved! */
+   
+
