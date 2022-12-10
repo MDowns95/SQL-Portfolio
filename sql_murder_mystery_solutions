@@ -69,4 +69,11 @@ SELECT date, description
    Membership number starts with '48Z'
    Murder happened January 9th
    License plate contained 'HW42' */
+   SELECT name
+	FROM get_fit_now_member gfnm
+	JOIN get_fit_now_check_in gfnci
+	ON gfnm.id = gfnci.membership_id
+	WHERE check_in_date IS '20180109'
+	AND membership_id LIKE '48Z%';
+/* Querry returns: Joe Germuska and Jeremy Bowers */
    
