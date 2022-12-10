@@ -47,3 +47,7 @@ SELECT date, description
     WHERE name LIKE "Annabel%" AND address_street_name IS "Franklin Ave";
 /* Querry returns "Annabel Miller" */
 
+/* My first time through I ran a querry to get Morty Schapiro and Annabel Miller as the first and last results in the field.
+    It's not as neat doing them separately however. */
+
+/* Next step is finding witness testimonies. */
