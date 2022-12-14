@@ -3,6 +3,10 @@
   The questions range through 17 easy, 23 medium, and 10 hard */
 
 /* Commands covered include:
+   Basics:
+   	SELECT, INSERT, DELETE, UPDATE, WHERE
+   Ouerry Filtering:
+   	OPERATORS, ORDER BY, LIKE, IN, BETWEEN, JOIN, UNION, GROUP BY, HAVING, CASE, DISTINCT, EXISTS, ANY, ALL, IFNULL, NULL VALUES, ALIASES
    Aggregate:
    	COUNT, AVG, SUM, MAX, MIN
    Window:
